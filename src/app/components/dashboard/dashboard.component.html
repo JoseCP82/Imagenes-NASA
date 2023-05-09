@@ -1,1 +1,6 @@
-<app-card></app-card>
+<div class="empty" *ngIf="!listImages.length">No results</div>
+<div class="row row-cols-1 row-cols-md-3 g-4 pt-5">
+    <div *ngFor="let image of listImages" class="col d-flex justify-content-around">
+        <app-card></app-card>
+    </div>
+</div>

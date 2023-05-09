@@ -13,8 +13,8 @@ export class ErrorComponent implements OnDestroy {
   subscription: Subscription;
 
   constructor(private _imageService: ImageService) {
-    this.subscription = this._imageService.getError().subscribe( data => {
-      this.showError = true;
+    this.subscription = this._imageService.getError().subscribe( (data: string) => {
+      this.showErrorMessage();
       this.message = data;
     });
   }
@@ -27,6 +27,6 @@ export class ErrorComponent implements OnDestroy {
     this.showError = true,
     setTimeout( () => {
       this.showError = false;
-    }, 2000);
+    }, 3000);
   }
 }
