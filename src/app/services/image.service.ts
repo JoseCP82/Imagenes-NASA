@@ -28,9 +28,16 @@ export class ImageService {
 
   getImages(): Observable<any> {
     const KEY = 'J4opDzxs7CuKNadDmOFLESf1G7AGZmtrLICHtmwL';
-    const DATE = '2020-09-15';
-    //const URL = 'https://api.nasa.gov/planetary/apod?api_key='+KEY+'&date='+DATE;
+    const DATE_NOW = this.getFormattedDate();
+
+    console.log(DATE_NOW)
+
+    //const URL = 'https://api.nasa.gov/planetary/apod?api_key='+KEY+'&start_date=23/05/03&end_date=23/05/08';
     const URL = 'https://api.nasa.gov/planetary/apod?api_key='+KEY+'&count=6';
     return this.http.get(URL);
+  }
+
+  getFormattedDate(): string {
+    return new Date(Date.now()).toLocaleDateString();
   }
 }

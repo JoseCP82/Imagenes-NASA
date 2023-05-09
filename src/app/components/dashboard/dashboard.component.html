@@ -1,6 +1,6 @@
-<div class="empty" *ngIf="!listImages.length">No results</div>
-<div class="row row-cols-1 row-cols-md-3 g-4 pt-5">
-    <div *ngFor="let image of listImages" class="col d-flex justify-content-around">
-        <app-card></app-card>
+<div class="empty d-flex justify-content-center pt-5" *ngIf="!listImages.length">No images to show.</div>
+<div class="row row-cols-1 row-cols-md-3 g-4 pt-4">
+    <div *ngFor="let image of listImages" class="col d-flex justify-content-around">        
+        <app-card [imageData]="image"></app-card>
     </div>
 </div>

@@ -1,0 +1,11 @@
+img {
+    object-fit: cover;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.card:hover {
+    border: solid 2px lightsteelblue;
+}
