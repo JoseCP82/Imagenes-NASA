@@ -8,18 +8,18 @@ import { ImageService } from 'src/app/services/image.service';
 })
 export class DashboardComponent implements OnInit {
   listImages: any[] = [];
+  loading = false;
 
   constructor(private _imageService: ImageService) {  }
 
   ngOnInit(): void {
+    this.loading = true,
     this.getImages();
   }
 
   getImages() {
     this._imageService.getImages().subscribe(data => {
-      
-      console.log(data);
-      
+      this.loading = false;
       if(data.length === 0) {
         this._imageService.setError('Ooops, no images available.');
         return;
@@ -29,6 +29,7 @@ export class DashboardComponent implements OnInit {
     
     }, error => {
       this._imageService.setError('Sorry, an error occurred. Wait a few minuts an push refresh button.');
+      this.loading = false;
     });
     
    
