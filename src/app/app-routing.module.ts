@@ -5,10 +5,10 @@ import { DetailsComponent } from './components/details/details.component';
 import { DetailGuard } from './guards/detail.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'details', canActivate: [DetailGuard], component: DetailsComponent },
-  { path: '**', redirectTo: '/dashboard', pathMatch: 'full' }
+  { path: 'details/:date', canActivate: [DetailGuard], component: DetailsComponent },
+  { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }
 ];
 
 @NgModule({

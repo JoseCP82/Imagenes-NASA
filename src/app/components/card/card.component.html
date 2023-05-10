@@ -3,5 +3,7 @@
     <div class="card-body">
       <img src="{{ url }}" class="img-fluid" alt="NASA image">
     </div>
-    <div class="card-footer">{{ title }}</div>
+    <div class="card-footer">{{ title }}
+      <button class="btn btn-primary btn-block btn-xl" routerLink="../details/{{ date }}">Details</button>
+    </div>
 </div>
