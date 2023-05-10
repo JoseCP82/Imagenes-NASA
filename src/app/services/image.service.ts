@@ -8,9 +8,11 @@ import { Observable, Subject } from 'rxjs';
 export class ImageService {
   private error$ = new Subject<string>();
   private flag: boolean;
+  private url: string;
 
   constructor(private http: HttpClient) {
     this.flag = false;
+    this.url = 'https://api.nasa.gov/planetary/apod?api_key=J4opDzxs7CuKNadDmOFLESf1G7AGZmtrLICHtmwL';
   }
 
   /**
@@ -35,11 +37,10 @@ export class ImageService {
     d.setDate(d.getDate()-6);
     const DATE_LAST = this.getFormattedDate(d);
 
-    const KEY = 'J4opDzxs7CuKNadDmOFLESf1G7AGZmtrLICHtmwL';
-    const URL = 'https://api.nasa.gov/planetary/apod?api_key='+KEY+'&start_date=2023-05-05&end_date=2023-05-10';
-    //const URL = 'https://api.nasa.gov/planetary/apod?api_key='+KEY+'&start_date='+DATE_LAST+'&end_date='+DATE_NOW;
+    const PROPS = '&start_date=2023-05-05&end_date=2023-05-10';
+    //const PROPS = '&start_date='+DATE_LAST+'&end_date='+DATE_NOW;
 
-    let result = this.http.get(URL); 
+    let result = this.http.get(this.url+PROPS); 
     if(result !== null ) this.flag = true;
     return result; 
   }
@@ -50,5 +51,9 @@ export class ImageService {
 
   getFlag(): boolean {
     return this.flag;
+  }
+
+  getImageDetail(date: string | null): Observable<any> {
+    return this.http.get(this.url+'&date='+date);
   }
 }
