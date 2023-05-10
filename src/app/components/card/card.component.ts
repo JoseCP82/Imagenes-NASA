@@ -11,6 +11,7 @@ export class CardComponent implements OnInit {
   url: string = '';
   title: string = '';
   date: string = '';
+  type: string = '';
 
   constructor(){  }
 
@@ -18,5 +19,6 @@ export class CardComponent implements OnInit {
     this.title = this.imageData.title;
     this.url = this.imageData.url;
     this.date = this.imageData.date;
+    this.type = this.imageData.media_type;
   }
 }

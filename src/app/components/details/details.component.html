@@ -3,7 +3,12 @@
     <div class="col-lg-8 offset-lg-2">
         <div class="card mb-3 mt-4">
             <div class="card-body">
-                <img [src]="urlImage" alt="NASA image" class="card-img-top">
+                <ng-template [ngIf]="type === 'image'" [ngIfElse]="notImage">
+                    <img [src]="urlImage" alt="NASA image" class="card-img-top">
+                  </ng-template>  
+                  <ng-template #notImage>
+                    <img src="../../../assets/image-not-found.png" class="card-img-top" alt="Image not found">
+                  </ng-template>
                 <h6 class="card-subtitle mt-2">{{ explanation }}</h6>
             </div>
         </div>

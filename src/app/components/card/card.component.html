@@ -1,7 +1,12 @@
 <div class="card text-white bg-dark mb-3 h-100" style="max-width: 25rem;" routerLink="../details/{{ date }}">
     <div class="card-header d-flex justify-content-center">{{ date }}</div>
     <div class="card-body">
-      <img  src="{{ url }}" class="img-fluid" alt="NASA image">
+      <ng-template [ngIf]="type === 'image'" [ngIfElse]="notImage">
+        <img src="{{ url }}" class="img-fluid" alt="NASA image">
+      </ng-template>  
+      <ng-template #notImage>
+        <img src="../../../assets/image-not-found.png" class="img-fluid" alt="Image not found">
+      </ng-template>
     </div>
     <div class="card-footer">{{ title }}</div>
 </div>

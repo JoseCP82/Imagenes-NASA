@@ -11,6 +11,7 @@ export class DetailsComponent implements OnInit {
   date: string | null;
   explanation = '';
   urlImage = '';
+  type = '';
   loading = false;
 
   constructor(private router: Router, 
@@ -33,6 +34,7 @@ export class DetailsComponent implements OnInit {
       this.loading = false;
       this.explanation = data.explanation;
       this.urlImage = data.url;
+      this.type = data.media_type;
     },error => {
       this._imageService.setError('Sorry, an error occurred.');
       this.loading = false;
