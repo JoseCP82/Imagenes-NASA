@@ -1,8 +1,7 @@
-<div class="card text-white bg-dark mb-3 h-100" style="max-width: 25rem;">
+<div class="card text-white bg-dark mb-3 h-100" style="max-width: 25rem;" routerLink="../details/{{ date }}">
     <div class="card-header d-flex justify-content-center">{{ date }}</div>
     <div class="card-body">
-      <img src="{{ url }}" class="img-fluid" alt="NASA image">
+      <img  src="{{ url }}" class="img-fluid" alt="NASA image">
     </div>
     <div class="card-footer">{{ title }}</div>
-    <button class="btn btn-dark btn-block" routerLink="../details/{{ date }}">Details</button>
 </div>

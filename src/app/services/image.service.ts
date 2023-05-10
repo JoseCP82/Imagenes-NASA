@@ -9,6 +9,7 @@ export class ImageService {
   private error$ = new Subject<string>();
   private flag: boolean;
   private url: string;
+  private LAST_DAYS = 5;
 
   constructor(private http: HttpClient) {
     this.flag = false;
@@ -32,21 +33,23 @@ export class ImageService {
   }
 
   getImages(): Observable<any> {
-    const DATE_NOW = this.getFormattedDate(new Date(Date.now()));
-    const d = new Date();
-    d.setDate(d.getDate()-6);
-    const DATE_LAST = this.getFormattedDate(d);
-
-    const PROPS = '&start_date=2023-05-05&end_date=2023-05-10';
-    //const PROPS = '&start_date='+DATE_LAST+'&end_date='+DATE_NOW;
+    let dates = this.getFormattedDates();
+    const PROPS = '&start_date='+dates[1]+'&end_date='+dates[0];
 
     let result = this.http.get(this.url+PROPS); 
     if(result !== null ) this.flag = true;
+
     return result; 
   }
 
-  getFormattedDate(date: Date): string {
-    return date.getFullYear()+'-'+date.getMonth()+'-'+date.getDay();  
+  getFormattedDates(): string[] {
+    let last = new Date();
+    last.setDate(last.getDate()-this.LAST_DAYS);
+
+    return [
+      new Date(Date.now()).toISOString().slice(0,10),
+      last.toISOString().slice(0,10)
+    ];
   }
 
   getFlag(): boolean {
