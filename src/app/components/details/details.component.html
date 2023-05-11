@@ -1,10 +1,10 @@
 <app-spinner *ngIf="loading"></app-spinner>
 <div *ngIf="!loading" class="row">
     <div class="col-lg-8 offset-lg-2">
-        <div class="card mb-3 mt-4">
+        <div class="card mb-3 mt-4 card text-white bg-dark">
             <div class="card-body">
                 <ng-template [ngIf]="type === 'image'" [ngIfElse]="notImage">
-                    <img [src]="urlImage" alt="NASA image" class="card-img-top">
+                    <img [src]="urlImage" alt="NASA image" class="img-fluid">
                   </ng-template>  
                   <ng-template #notImage>
                     <img src="../../../assets/image-not-found.png" class="card-img-top" alt="Image not found">
@@ -15,5 +15,5 @@
     </div>
 </div>
 <div class="mt-2 mb-2 d-flex justify-content-center">
-    <button class="btn btn-lg btn-dark" type="button" (click)="goToDashboard()">Back</button>
+    <button class="btn btn-lg btn-dark w-50" type="button" (click)="goToDashboard()">Back</button>
 </div>

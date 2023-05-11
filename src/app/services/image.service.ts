@@ -34,16 +34,11 @@ export class ImageService {
 
   getImages(): Observable<any> {
     let dates = this.getFormattedDates();
-    //const PROPS = '&start_date='+dates[1]+'&end_date='+dates[0];
-
-    const PROPS = '&count=12'
+    const PROPS = '&start_date='+dates[1]+'&end_date='+dates[0];
 
     let result = this.http.get(this.url+PROPS); 
     if(result !== null ) this.flag = true;
-
-    result.subscribe(data => 
-      console.log(data));
-
+    
     return result; 
   }
 
