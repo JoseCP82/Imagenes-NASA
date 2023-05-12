@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { ImageRequest } from '../models/image_request';
+import { Observable, Subject, catchError, map, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +43,10 @@ export class ImageService {
     let dates = this.getFormattedDates();
     const PROPS = '&start_date='+dates[1]+'&end_date='+dates[0];
 
-    let result = this.http.get(this.urlApi+PROPS); 
+    let result = this.http.get(this.urlApi+PROPS).pipe(
+      map( val => val),
+      catchError( (error: ErrorEvent) => throwError(error) )
+    ) 
     if(result !== null ) this.flagGuard = true;
     
     return result; 
@@ -74,7 +76,7 @@ export class ImageService {
   }
 
   /**
-   * function that obtains an observable with the information of a data from the external API
+   * Function that obtains an observable with the information of a data from the external API
    * @param date Date the request is made
    * @returns Observable with the specific data
    */

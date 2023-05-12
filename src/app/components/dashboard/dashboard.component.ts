@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { ImageRequest } from 'src/app/models/image_request';
 import { ImageService } from 'src/app/services/image.service';
 
 @Component({ 
@@ -8,7 +9,7 @@ import { ImageService } from 'src/app/services/image.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  listImages: any[] = [];
+  listImages: ImageRequest[] = [];
 
   // Spinner is loading or not
   loading = false; 
