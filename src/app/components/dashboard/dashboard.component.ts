@@ -9,7 +9,9 @@ import { ImageService } from 'src/app/services/image.service';
 })
 export class DashboardComponent implements OnInit {
   listImages: any[] = [];
-  loading = false;
+
+  // Spinner is loading or not
+  loading = false; 
 
   constructor(private _imageService: ImageService, private translate: TranslateService) {  }
 
@@ -18,6 +20,9 @@ export class DashboardComponent implements OnInit {
     this.getImages();
   }
 
+  /**
+   * Gets the service data
+   */
   getImages() {
     try {
       this._imageService.getImages().subscribe(data => {

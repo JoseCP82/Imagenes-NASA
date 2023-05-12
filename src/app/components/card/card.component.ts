@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardComponent implements OnInit {
   @Input() imageData: any;
   
+  // json data variables for mapped
   url: string = '';
   title: string = '';
   date: string = '';

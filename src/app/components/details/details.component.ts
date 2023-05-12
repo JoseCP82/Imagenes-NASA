@@ -13,7 +13,9 @@ export class DetailsComponent implements OnInit {
   explanation = '';
   urlImage = '';
   type = '';
-  loading = false;
+  
+  // Spinner is loading or not
+  loading = false; 
 
   constructor(private router: Router, 
               private aRoute: ActivatedRoute, 
@@ -27,10 +29,16 @@ export class DetailsComponent implements OnInit {
     this.getImage();
   }
 
+  /**
+   * Redirect to the url specified in rouing-module
+   */
   goToDashboard(): void {
     this.router.navigate(['dashboard']);
   }
 
+  /**
+   * Obtains a specific data of the service
+   */
   getImage(): void {
     this._imageService.getImageDetail(this.date).subscribe( data => {
       this.loading = false;
