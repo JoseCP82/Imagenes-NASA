@@ -1,6 +1,6 @@
 <div class="dashboard">
     <app-spinner *ngIf="loading"></app-spinner>
-    <div class="empty d-flex justify-content-center pt-5" *ngIf="!listImages.length">No images to show.</div>
+    <div class="empty d-flex justify-content-center pt-5" *ngIf="!listImages.length">{{ "noImages" | translate }}</div>
     <div *ngIf="!loading" class="row row-cols-1 row-cols-md-3 g-4 pt-4 mb-4">
         <div *ngFor="let image of listImages" class="col d-flex justify-content-around">
             <app-card [imageData]="image"></app-card>

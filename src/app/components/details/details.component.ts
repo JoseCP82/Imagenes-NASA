@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { ImageService } from 'src/app/services/image.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class DetailsComponent implements OnInit {
 
   constructor(private router: Router, 
               private aRoute: ActivatedRoute, 
-              private _imageService: ImageService) {
+              private _imageService: ImageService,
+              private translate: TranslateService) {
     this.date = this.aRoute.snapshot.paramMap.get('date');
   }
 
@@ -36,7 +38,7 @@ export class DetailsComponent implements OnInit {
       this.urlImage = data.url;
       this.type = data.media_type;
     },error => {
-      this._imageService.setError('Sorry, an error occurred.');
+      this._imageService.setError(this.translate.instant('error'));
       this.loading = false;
     });
   }

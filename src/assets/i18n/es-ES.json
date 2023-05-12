@@ -1,0 +1,10 @@
+{
+    "navbarTitle":"NASA - Imágenes de la semana",
+    "noImages":"No hay imagenes para mostrar",
+    "imagesNotFound":"Ooops, no hay imagenes disponibles",
+    "apiError":"Disculpe, ocurrió un error. Espere unos minutos y pulse el botón de refrescar.",
+    "imgNotFound":"Imagen no disponible",
+    "nasaImg":"Imagen NASA",
+    "error":"Disculpe, ocurrió un error.",
+    "backButton":"Regresar"
+}

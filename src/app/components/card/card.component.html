@@ -2,10 +2,10 @@
     <div class="card-header d-flex justify-content-center">{{ date }}</div>
     <div class="card-body">
       <ng-template [ngIf]="type === 'image'" [ngIfElse]="notImage">
-        <img src="{{ url }}" class="img-fluid" alt="NASA image">
+        <img src="{{ url }}" class="img-fluid" alt="{{ 'nasaImg' | translate }}">
       </ng-template>  
       <ng-template #notImage>
-        <img src="../../../assets/image-not-found.png" class="img-fluid mb-3" alt="Image not found">
+        <img src="../../../assets/img/image-not-found.png" class="img-fluid mb-3" alt="{{ 'imgNotFound' | translate }}">
       </ng-template>
     </div>
     <div class="card-footer d-flex justify-content-center">{{ title }}</div>

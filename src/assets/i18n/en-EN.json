@@ -1,0 +1,10 @@
+{
+    "navbarTitle":"NASA - Picks of the Week",
+    "noImages":"No images to show",
+    "imagesNotFound":"Ooops, no images available.",
+    "apiError":"Sorry, an error occurred. Wait a few minuts an push refresh button.",
+    "imgNotFound":"Image not found",
+    "nasaImg":"NASA image",
+    "error":"Sorry, an error occurred.",
+    "backButton":"Back"
+}
