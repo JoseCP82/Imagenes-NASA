@@ -10,5 +10,7 @@ img {
 }
 
 .card:hover {
-    border: solid 2px azure;
+    border: solid 2px rgba(226, 255, 226, 0.5);
+    transform: translateY(-12px);
+    box-shadow: 0px 0px 10px 10px rgba(226, 255, 226, 0.8);
 }
