@@ -1,16 +1,14 @@
 img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+    object-fit:  cover;
     background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;	
+    background-repeat:no-repeat;
 }
 
 .card {
     cursor: pointer;
+    border: 1px solid white;
 }
 
 .card:hover {
-    border: solid 3px rgb(155, 163, 167);
+    border: solid 2px azure;
 }

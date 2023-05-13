@@ -1,11 +1,11 @@
-<div class="card text-white bg-dark mb-3 h-100" style="max-width: 25rem;" routerLink="../details/{{ imageData?.date }}">
+<div class="card text-white bg-dark m-3 h-100" routerLink="../details/{{ imageData?.date }}">
     <div class="card-header d-flex justify-content-center">{{ imageData?.date }}</div>
-    <div class="card-body">
+    <div class="card-body p-0">
       <ng-template [ngIf]="imageData?.media_type === 'image'" [ngIfElse]="notImage">
-        <img src="{{ imageData?.url }}" class="img-fluid" alt="{{ 'nasaImg' | translate }}">
+        <img src="{{ imageData?.url }}" class="img-fluid h-100" alt="{{ 'nasaImg' | translate }}">
       </ng-template>  
       <ng-template #notImage>
-        <img src="../../../assets/img/image-not-found.png" class="img-fluid mb-3" alt="{{ 'imgNotFound' | translate }}">
+        <img src="../../../assets/img/image-not-found.png" class="img-fluid h-100" alt="{{ 'imgNotFound' | translate }}">
       </ng-template>
     </div>
     <div class="card-footer d-flex justify-content-center">{{ imageData?.title }}</div>
