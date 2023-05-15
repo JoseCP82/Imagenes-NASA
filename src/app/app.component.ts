@@ -10,10 +10,10 @@ export class AppComponent {
   title = 'Imagenes-NASA';
   langs: string[] = [];
 
-  constructor(transalate: TranslateService) {
-    transalate.use(navigator.language);
-    transalate.addLangs(['en-EN', 'es-ES']);
-    transalate.setDefaultLang('en-EN');
-    this.langs = transalate.getLangs();
+  constructor(translate: TranslateService) {
+    translate.use(navigator.language);
+    translate.addLangs(['en-EN', 'es-ES']);
+    translate.setDefaultLang('en-EN');
+    this.langs = translate.getLangs();
   }
 }

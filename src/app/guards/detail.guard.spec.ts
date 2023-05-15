@@ -1,16 +1,18 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DetailGuard } from './detail.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { ImageService } from '../services/image.service';
 
-fdescribe('DetailGuard', () => {
+describe('DetailGuard', () => {
   let guard: DetailGuard;
   let service: ImageService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        HttpClientModule
+        HttpClientModule,
+        HttpClientTestingModule
       ]
     }).compileComponents();
   });
@@ -25,7 +27,7 @@ fdescribe('DetailGuard', () => {
     expect(guard).toBeTruthy();
   });
 
-  fit('should enterTrue', () => {
+  it('should enterTrue', () => {
     spyOn(service, 'getFlag').and.returnValue(true);
     expect(guard.canActivate).toBeTruthy();
   })

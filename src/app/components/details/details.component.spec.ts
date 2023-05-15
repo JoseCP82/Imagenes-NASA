@@ -1,20 +1,33 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { DetailsComponent } from './details.component';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('DetailsComponent', () => {
   let component: DetailsComponent;
-  let fixture: ComponentFixture<DetailsComponent>;
+  const fakeActivatedRoute = {
+    snapshot: { data: {  } }
+  } as ActivatedRoute;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailsComponent ]
+      imports: [ 
+        RouterTestingModule, 
+        HttpClientModule
+      ],
+      declarations: [DetailsComponent],
+      providers: [ 
+        DetailsComponent,
+        {provide: ActivatedRoute, useValue: fakeActivatedRoute} ]
     })
     .compileComponents();
+  });
 
-    fixture = TestBed.createComponent(DetailsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    component = TestBed.inject(DetailsComponent);
   });
 
   it('should create', () => {

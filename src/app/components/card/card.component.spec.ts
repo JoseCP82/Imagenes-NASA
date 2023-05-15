@@ -4,17 +4,17 @@ import { CardComponent } from './card.component';
 
 describe('CardComponent', () => {
   let component: CardComponent;
-  let fixture: ComponentFixture<CardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CardComponent ]
+      providers: [ CardComponent ]
     })
     .compileComponents();
+  });
 
-    fixture = TestBed.createComponent(CardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    component = TestBed.inject(CardComponent);
   });
 
   it('should create', () => {
