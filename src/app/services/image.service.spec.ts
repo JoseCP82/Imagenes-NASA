@@ -16,4 +16,16 @@ describe('ImageService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should getFlagTrue', () => {
+    spyOn(service, 'getFlag').and.returnValue(true);
+    expect(service.getFlag).toBeTruthy();
+  });
+
+  it('should getFlagFalse', () => {
+    spyOn(service, 'getFlag').and.returnValue(false);
+    expect(service.getFlag).toBeTruthy();
+  });
+
+  
 });

@@ -30,5 +30,10 @@ describe('DetailGuard', () => {
   it('should enterTrue', () => {
     spyOn(service, 'getFlag').and.returnValue(true);
     expect(guard.canActivate).toBeTruthy();
-  })
+  });
+
+  it('should enterFalse', () => {
+    spyOn(service, 'getFlag').and.returnValue(false);
+    expect(guard.canActivate).toBeTruthy();
+  });
 });
