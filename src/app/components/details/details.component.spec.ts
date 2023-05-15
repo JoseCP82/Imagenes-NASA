@@ -31,4 +31,8 @@ describe('DetailsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should toNavigate', () => {
+    expect(component.goToDashboard).toHaveBeenCalled;
+  })
 });

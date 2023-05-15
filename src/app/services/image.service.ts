@@ -76,6 +76,14 @@ export class ImageService {
   }
 
   /**
+   * Set the flag status
+   * @param flag Variable with status
+   */
+  setFlag(flag: boolean) {
+    this.flagGuard = flag;
+  }
+
+  /**
    * Function that obtains an observable with the information of a data from the external API
    * @param date Date the request is made
    * @returns Observable with the specific data

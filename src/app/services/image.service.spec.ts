@@ -17,15 +17,19 @@ describe('ImageService', () => {
     expect(service).toBeTruthy();
   });
 
+  
   it('should getFlagTrue', () => {
-    spyOn(service, 'getFlag').and.returnValue(true);
-    expect(service.getFlag).toBeTruthy();
+    service.setFlag(true);
+    expect(service.getFlag()).toBeTrue();
   });
 
   it('should getFlagFalse', () => {
-    spyOn(service, 'getFlag').and.returnValue(false);
-    expect(service.getFlag).toBeTruthy();
+  
+      service.setFlag(false);
+    expect(service.getFlag()).toBeFalse();
   });
 
-  
+  it('should getStringArray', () => {
+      
+  });
 });
