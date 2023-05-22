@@ -1,6 +1,7 @@
-# ImagenesNASA
+# Imagenes NASA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+Aplicación desarrollada en Angular.
+Muestra las últimas 6 fotografias desde la fecha actual proporcionadas por la api de la NASA y una breve descripción al clickar sobre ellas.
 
 ## Development server
 
